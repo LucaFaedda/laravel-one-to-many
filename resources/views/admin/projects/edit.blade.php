@@ -38,6 +38,15 @@
                                         <label class="control-label my-2 fw-bold ">Difficoltà</label>
                                         <input type="number" name="difficoltà" class="form-control"  min="0" max="10" value="{{old('difficoltà') ?? $project->difficoltà}}">
                                     </div>
+                                    <div class="col-5">
+                                        <label class="control-label my-2 fw-bold">Tipo</label>
+                                        <select class="form-control" name="types_id" id="types_id">
+                                            @foreach ($types as $type )
+                                                <option value="{{$type->id}}" {{$type->id == old('type_id', $project->types_id) ? 'selected' : ""}}>{{$type->name}}</option>  
+                                            @endforeach
+                                        </select>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
