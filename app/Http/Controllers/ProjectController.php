@@ -47,7 +47,8 @@ class ProjectController extends Controller
         $form_data['slug']= $slug;
         $newproject = new Project();
         $newproject->fill($form_data);
-        dd($form_data);
+
+
 
        
         $newproject->save();
@@ -68,6 +69,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
+        
         return view('admin.projects.show', compact('project'));
     }
 

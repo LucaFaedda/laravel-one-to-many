@@ -39,9 +39,9 @@
                                     </div>
                                     <div class="col-5">
                                         <label class="control-label my-2 fw-bold">Tipo</label>
-                                        <select class="form-control" name="type_id" id="type_id">
-                                            @foreach ($types as $item )
-                                                <option value="{{$item->id}}">{{$item->name}}</option> 
+                                        <select class="form-control" name="types_id" id="types_id">
+                                            @foreach ($types as $type )
+                                                <option value="{{$type->id}}">{{$type->name}}</option> 
                                             @endforeach
 
                                         </select>

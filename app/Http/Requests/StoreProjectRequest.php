@@ -30,7 +30,8 @@ class StoreProjectRequest extends FormRequest
             'data_progetto' => ['nullable'],// se non fosse nullable non me li prende nel form create
             'difficoltà' => ['required'],
             'descrizione' => ['nullable'], // se non fosse nullable non me li prende nel form create
-            'type_id' => ['nullable', 'exists:types,id'] // SCRIVERE MEGLIO EXISTS E CONTROLALRE BENE NOME TYPE_ID
+            'types_id' => ['nullable', 'exists:types,id'], // SCRIVERE MEGLIO EXISTS E CONTROLALRE BENE NOME TYPE_ID
+            'name' => ['required']
         ];
 
     }
