@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTypeRequest;
 use App\Http\Requests\UpdateTypeRequest;
 use Illuminate\Support\Facades\Auth;
+Use Illuminate\Support\Str;
 
 class TypeController extends Controller
 {

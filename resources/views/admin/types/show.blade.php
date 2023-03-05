@@ -11,7 +11,7 @@
                 </div>
                 <div class="row d-flex flex-column">
                     <div class="col-2">
-                        <h5><span class="fw-bold">Span: </span> {{$type->slug}}</h5>
+                        <h5><span class="fw-bold">Slug: </span> {{$type->slug}}</h5>
                     </div>
                     <div class="col-6">
                         <p><span class="fw-bold">Descrizione: </span>  {{$type->description}}</p>

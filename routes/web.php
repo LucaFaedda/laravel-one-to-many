@@ -24,7 +24,7 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function(){
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('projects', ProjectController::class)->parameters(['projects'=>'project:slug']); // devo aggiungere il parameters
-    Route::resource('types', TypeController::class)->parameters(['type'=>'type:slug']);
+    Route::resource('types', TypeController::class)->parameters(['types'=>'type:slug']);
 });
 
 Route::middleware('auth')->group(function () {
