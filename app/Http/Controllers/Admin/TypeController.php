@@ -85,7 +85,12 @@ class TypeController extends Controller
      */
     public function update(UpdateTypeRequest $request, Type $type)
     {
-        //
+        $form_data = $request->validated();
+        $slug = Type::generateSlug($request->name);
+        $form_data['slug']= $slug;
+        $type->update($form_data);
+
+        return redirect()->route('admin.types.index')->with('message', 'Progetto modificato correttamente');
     }
 
     /**

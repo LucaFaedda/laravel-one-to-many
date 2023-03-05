@@ -1,11 +1,13 @@
+
 @extends('layouts.admin')
 @section('content')
 
     <div class="container">
         <div class="row p-5">
             <div class="col-12">
-                <form action="{{route('admin.types.store')}}" method="POST">
+                <form action="{{route('admin.types.update', $type->slug)}}" method="POST">
                     @csrf
+                    @method('PUT')
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group ">
@@ -22,8 +24,8 @@
                                         @error('title')
                                             <p class="text-danger fw-bold">{{$message}}</p>
                                         @enderror
-                                        <label class="control-label mb-2 fw-bold ">Nome</label>
-                                        <input type="text" name="name" class="form-control" placeholder="Inserisci il Nome" value="{{old('name') ?? $type->name}}">
+                                        <label class="control-label mb-2 fw-bold ">Titolo</label>
+                                        <input type="text" name="name" class="form-control" placeholder="Inserisci il titolo" value="{{old('name') ?? $type->name}}">
                                     </div>
                                 </div>
                             </div>
@@ -31,14 +33,14 @@
                         <div class="row">
                             <div class="col-12 mt-3">
                                 <label class="control-label my-2 fw-bold ">Descrizione progetto</label>
-                                <textarea class="form-control" name="description" placeholder="Inserisci la descrizione"></textarea>
+                                <textarea class="form-control" name="descrizione" placeholder="Inserisci la descrizione" >{{old('description') ?? $type->descrizione}}</textarea>
 
                             </div>
                         </div>
                         <div class="row my-5">
                             <div class="col-3">
                                 <button type="submit" class="form-control btn btn-primary">
-                                    Salva nuovo Tipo
+                                    Modifica Tipo
                                 </button>
                             </div>
                         </div>
@@ -51,3 +53,4 @@
 
 </div>
 @endsection
+

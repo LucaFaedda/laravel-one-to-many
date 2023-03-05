@@ -14,7 +14,7 @@ class UpdateTypeRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -26,7 +26,7 @@ class UpdateTypeRequest extends FormRequest
     {
         return [
             
-            'name' => ['required',  Rule::unique('types')->ignore($this->type)],
+            'name' => ['required'],
             'description' => ['nullable'] 
 
         ];
