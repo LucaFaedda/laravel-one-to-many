@@ -26,7 +26,7 @@
                             <td>{{$item->description}}</td>
                             <td>{{$item->slug}}</td>
                             <td><a href="{{route('admin.types.show', $item->slug)}}" class="btn btn-sm" title="Maggiori Informazioni"><i class="fa-solid fa-circle-info"></i></a></td>
-                            <td><a href="" class="btn btn-sm" title="Modifica"><i class="fa-regular fa-pen-to-square"></i></a></td>
+                            <td><a href="{{route('admin.types.edit', $item->slug)}}" class="btn btn-sm" title="Modifica"><i class="fa-regular fa-pen-to-square"></i></a></td>
                             <td>
                               <form action="{{route('admin.types.destroy', $item->slug)}}" method="POST">
                                 @csrf
