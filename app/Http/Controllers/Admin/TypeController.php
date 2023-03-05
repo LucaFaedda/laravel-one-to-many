@@ -45,7 +45,7 @@ class TypeController extends Controller
         $form_data['slug']= $slug;
         $newtype = new Type();
         $newtype->fill($form_data);
-        dd($form_data);
+
        
         $newtype->save();
 
@@ -96,6 +96,8 @@ class TypeController extends Controller
      */
     public function destroy(Type $type)
     {
-        //
+        $type->delete();
+
+        return redirect()->route('admin.types.index')->with('message', 'Progetto eliminato correttamente');
     }
 }
