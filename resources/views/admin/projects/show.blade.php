@@ -22,6 +22,9 @@
                     <div class="col-2">
                         <p><span class="fw-bold">Difficoltà: </span> {{$project->difficoltà}}</p>
                     </div>
+                    <div class="col-2">
+                        <p><span class="fw-bold">Tipo: </span> {{$project->types}}</p>
+                    </div>
                 </div>
             </div>
           </div>

@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Models\Project;
+use App\Models\Type;
 
 class StoreProjectRequest extends FormRequest
 {
@@ -28,7 +29,9 @@ class StoreProjectRequest extends FormRequest
             'title' => ['required', 'max:10', 'unique:projects,title'],
             'data_progetto' => ['nullable'],// se non fosse nullable non me li prende nel form create
             'difficoltà' => ['required'],
-            'descrizione' => ['nullable'] // se non fosse nullable non me li prende nel form create
+            'descrizione' => ['nullable'], // se non fosse nullable non me li prende nel form create
+            'type_id' => ['nullable', 'exists:types,id'] // SCRIVERE MEGLIO EXISTS E CONTROLALRE BENE NOME TYPE_ID
         ];
+
     }
 }

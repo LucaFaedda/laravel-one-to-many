@@ -27,15 +27,25 @@
                                         <input type="text" name="title" class="form-control" placeholder="Inserisci il titolo">
                                     </div>
                                     <div class="col-3">
-                                        <label class="control-label mb-2 fw-bold ">Data del progetto</label>
+                                        <label class="control-label my-2 fw-bold ">Data del progetto</label>
                                         <input type="date" name="data_progetto"class="form-control"  placeholder="Data del progetto"></input>
                                     </div>
                                     <div class="col-5">
                                         @error('difficoltà')
-                                            <p class="text-danger fw-bold">{{$message}}</p>
+                                            <p class="text-danger  fw-bold">{{$message}}</p>
                                          @enderror
-                                        <label class="control-label my-2 fw-bold ">Difficoltà</label>
+                                        <label class="control-label  my-2 fw-bold">Difficoltà</label>
                                         <input type="number" name="difficoltà" class="form-control"  min="0" max="10">
+                                    </div>
+                                    <div class="col-5">
+                                        <label class="control-label my-2 fw-bold">Tipo</label>
+                                        <select class="form-control" name="type_id" id="type_id">
+                                            @foreach ($types as $item )
+                                                <option value="{{$item->id}}">{{$item->name}}</option> 
+                                            @endforeach
+
+                                        </select>
+
                                     </div>
                                 </div>
                             </div>
