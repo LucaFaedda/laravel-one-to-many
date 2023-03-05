@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 Use Illuminate\Support\Str;
+use Faker\Generator as Faker;
 
 
 use App\Models\Type;
@@ -16,7 +17,7 @@ class TypeSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
         $types = ['HTML', 'CSS', 'JavaScript', 'PHP', 'Laravel', 'VueJs'];
 
@@ -25,6 +26,7 @@ class TypeSeeder extends Seeder
 
             $newType->name = $type;
             $newType->slug = Str::slug($newType->name, '-');
+            $newType->description = $faker->paragraph();
 
             $newType->save();
         }
