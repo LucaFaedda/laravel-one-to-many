@@ -31,7 +31,6 @@ class StoreProjectRequest extends FormRequest
             'difficoltà' => ['required'],
             'descrizione' => ['nullable'], // se non fosse nullable non me li prende nel form create
             'types_id' => ['nullable', 'exists:types,id'], // SCRIVERE MEGLIO EXISTS E CONTROLALRE BENE NOME TYPE_ID
-            'name' => ['required']
         ];
 
     }

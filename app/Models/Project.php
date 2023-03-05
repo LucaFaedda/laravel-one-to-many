@@ -16,7 +16,7 @@ class Project extends Model
         return Str::slug($title, '-');
     }
 
-    public function Type(){
+    public function type(){
         return $this->belongsTo(Type::class, 'types_id'); // Serve aggiungere types_id sennò non mi rileva il nome
     }
 }

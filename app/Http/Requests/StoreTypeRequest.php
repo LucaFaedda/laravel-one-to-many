@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Models\Project;
+use App\Models\Type;
 
 class StoreTypeRequest extends FormRequest
 {
@@ -24,7 +26,8 @@ class StoreTypeRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+                'name' => ['required','unique:types,name'],
+                'description' => ['nullable'], // se non fosse nullable non me li prende nel form create
         ];
     }
 }

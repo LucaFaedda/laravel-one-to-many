@@ -47,16 +47,10 @@ class ProjectController extends Controller
         $form_data['slug']= $slug;
         $newproject = new Project();
         $newproject->fill($form_data);
-
-
-
        
         $newproject->save();
 
         // ho dovuto dare come valore nullable a descrizione e data_progetto sennò non me li trovava
-        
-
-   
 
     return redirect()->route('admin.projects.index' )->with('message', 'Progetto aggiunto correttamente');
     }
