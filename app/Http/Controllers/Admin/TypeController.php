@@ -29,7 +29,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.types.create');
     }
 
     /**
@@ -40,7 +40,18 @@ class TypeController extends Controller
      */
     public function store(StoreTypeRequest $request)
     {
-        //
+        $form_data = $request->validated();
+        $slug = Type::generateSlug($request->name);
+        $form_data['slug']= $slug;
+        $newtype = new Type();
+        $newtype->fill($form_data);
+        dd($form_data);
+       
+        $newtype->save();
+
+        // ho dovuto dare come valore nullable a descrizione e data_progetto sennò non me li trovava
+
+    return redirect()->route('admin.types.index' )->with('message', 'Nuovo tipo aggiunto correttamente');
     }
 
     /**

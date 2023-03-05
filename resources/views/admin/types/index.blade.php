@@ -43,7 +43,7 @@
               </div>
               <div class="col-3">
                 
-                <a class="btn btn-success my-3" href="">Aggiungi Elemento</a>
+                <a class="btn btn-success my-3" href="{{route('admin.types.create')}}">Aggiungi Elemento</a>
           </div>
       </div>
       @include('admin.partials.modal_delete')
