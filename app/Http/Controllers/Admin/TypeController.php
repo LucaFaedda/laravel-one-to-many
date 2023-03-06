@@ -46,6 +46,7 @@ class TypeController extends Controller
         $newtype = new Type();
         $newtype->fill($form_data);
 
+
        
         $newtype->save();
 
